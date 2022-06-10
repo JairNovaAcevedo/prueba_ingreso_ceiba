@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Prueba ingreso ceiba</string>
+    <string name="Buscar_usuario">Buscar usuario</string>
+    <string name="boton_ver_publicaciones">VER PUBLICACIONES</string>
 </resources>
