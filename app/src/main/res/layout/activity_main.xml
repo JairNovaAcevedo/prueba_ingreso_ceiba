@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".view.MainActivity"
     android:padding="20dp">
 
     <TextView
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/buscarEdt"
+        android:id="@+id/buscarDatosEdt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,17 +28,17 @@
         android:backgroundTint="@color/verde"/>
 
     <LinearLayout
-        android:id="@+id/radio_group_lista"
+        android:id="@+id/lista"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buscarEdt">
+        app:layout_constraintTop_toBottomOf="@+id/buscarDatosEdt">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerMotivoDevolucion"
+            android:id="@+id/recyclerListaUsuarios"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/white"></androidx.recyclerview.widget.RecyclerView>
