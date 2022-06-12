@@ -1,6 +1,8 @@
 package com.example.pruebaingresoceiba.presenter
 
 import com.example.pruebaingresoceiba.Interfaces.InterfaceConsultarUsuario
+import com.example.pruebaingresoceiba.modelo.UserDataCollection
+import com.example.pruebaingresoceiba.modelo.UserDataItemResponse
 import com.example.pruebaingresoceiba.repository.ConsultarUsuarioRepository
 
 class ConsultarUsuariosPresenter : InterfaceConsultarUsuario.Presenter{
@@ -17,8 +19,12 @@ class ConsultarUsuariosPresenter : InterfaceConsultarUsuario.Presenter{
         repository.consultarUsuarioRepository()
     }
 
-    override fun respuestaConsultarUsuario() {
-        view.respuestaConsultarUsuario()
+    override fun respuestaConsultarUsuario(datosUsuario: List<UserDataItemResponse>) {
+        view.respuestaConsultarUsuario(datosUsuario)
+    }
+
+    override fun errorConsultarUsuario(respuesta: String) {
+        view.errorConsultarUsuario(respuesta)
     }
 
 }

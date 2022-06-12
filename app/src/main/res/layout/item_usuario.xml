@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="15dp">
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+
+    >
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:orientation="vertical">
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingTop="10dp">
 
         <TextView
+            android:id="@+id/titulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Titulo"
@@ -29,10 +34,11 @@
                 android:id="@+id/imageView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/ic_baseline_phone_24"
-                android:layout_gravity="center_vertical"/>
+                android:layout_gravity="center_vertical"
+                app:srcCompat="@drawable/ic_baseline_phone_24" />
 
             <TextView
+                android:id="@+id/telefono"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="1-770-736-8031 x56442"
@@ -50,10 +56,11 @@
                 android:id="@+id/imageView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/ic_baseline_markunread_24"
-                android:layout_gravity="center_vertical"/>
+                android:layout_gravity="center_vertical"
+                app:srcCompat="@drawable/ic_baseline_markunread_24" />
 
             <TextView
+                android:id="@+id/correo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="1-770-736-8031 x56442"
@@ -68,12 +75,11 @@
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
         android:gravity="end"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/buttonConfirmar"
@@ -86,4 +92,4 @@
 
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
