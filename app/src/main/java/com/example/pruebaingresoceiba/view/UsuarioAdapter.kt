@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pruebaingresoceiba.R
-import com.example.pruebaingresoceiba.modelo.UserDataItemResponse
+import com.example.pruebaingresoceiba.data.modelo.UserDataItemResponse
 
 class UsuarioAdapter (val datosUsuario:List<UserDataItemResponse>): RecyclerView.Adapter<UsuarioViewHolder>(){
 

@@ -1,6 +1,6 @@
 package com.example.pruebaingresoceiba.Interfaces
 
-import com.example.pruebaingresoceiba.modelo.UserDataItemResponse
+import com.example.pruebaingresoceiba.data.modelo.UserDataItemResponse
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Url

@@ -1,4 +1,4 @@
-package com.example.pruebaingresoceiba.modelo
+package com.example.pruebaingresoceiba.data.modelo
 
 class UserDataCollection: ArrayList<UserDataItemResponse>()
 

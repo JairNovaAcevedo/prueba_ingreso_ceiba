@@ -1,19 +1,21 @@
 package com.example.pruebaingresoceiba.view
 
+import android.app.Application
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.widget.EditText
 import android.widget.Toast
-import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.room.Room
 import com.example.pruebaingresoceiba.Interfaces.InterfaceConsultarUsuario
-import com.example.pruebaingresoceiba.R
+import com.example.pruebaingresoceiba.data.dataBase.AppDataBase
 import com.example.pruebaingresoceiba.databinding.ActivityMainBinding
-import com.example.pruebaingresoceiba.modelo.UserDataCollection
-import com.example.pruebaingresoceiba.modelo.UserDataItemResponse
+import com.example.pruebaingresoceiba.data.modelo.UserDataItemResponse
 import com.example.pruebaingresoceiba.presenter.ConsultarUsuariosPresenter
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity(), InterfaceConsultarUsuario.View {
 
@@ -27,12 +29,13 @@ class MainActivity : AppCompatActivity(), InterfaceConsultarUsuario.View {
         setContentView(binding.root)
         eventoBuscarDato()
         initRecyclerView()
-        var presenter:InterfaceConsultarUsuario.Presenter = ConsultarUsuariosPresenter(this)
+        var presenter: InterfaceConsultarUsuario.Presenter =
+            ConsultarUsuariosPresenter(this, application)
         presenter.consultarUsuario()
     }
 
-    private fun eventoBuscarDato(){
-        binding.buscarDatosEdt.addTextChangedListener(object : TextWatcher{
+    private fun eventoBuscarDato() {
+        binding.buscarDatosEdt.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
             }
@@ -49,13 +52,13 @@ class MainActivity : AppCompatActivity(), InterfaceConsultarUsuario.View {
         })
     }
 
-    private fun initRecyclerView(){
+    private fun initRecyclerView() {
         adapter = UsuarioAdapter(datosUsuario)
         binding.recyclerListaUsuarios.layoutManager = LinearLayoutManager(this)
         binding.recyclerListaUsuarios.adapter = adapter
     }
 
-    override fun respuestaConsultarUsuario(datosUsuario:List<UserDataItemResponse>) {
+    override fun respuestaConsultarUsuario(datosUsuario: List<UserDataItemResponse>) {
         println("Filtro - respuestaConsultarUsuario")
         this.datosUsuario.clear()
         this.datosUsuario.addAll(datosUsuario)
@@ -63,7 +66,7 @@ class MainActivity : AppCompatActivity(), InterfaceConsultarUsuario.View {
     }
 
     override fun errorConsultarUsuario(respuesta: String) {
-        Toast.makeText(this, respuesta,Toast.LENGTH_LONG).show()
+        Toast.makeText(this, respuesta, Toast.LENGTH_LONG).show()
     }
 
 }

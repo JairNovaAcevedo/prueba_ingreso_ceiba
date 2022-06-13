@@ -1,7 +1,6 @@
 package com.example.pruebaingresoceiba.Interfaces
 
-import com.example.pruebaingresoceiba.modelo.UserDataCollection
-import com.example.pruebaingresoceiba.modelo.UserDataItemResponse
+import com.example.pruebaingresoceiba.data.modelo.UserDataItemResponse
 
 interface InterfaceConsultarUsuario {
 
